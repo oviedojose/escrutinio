@@ -296,7 +296,7 @@ por tokens (design tokens).
 
 ---
 
-**☐ HU-00.3 — Deploy inicial en Vercel**
+**☑ HU-00.3 — Deploy inicial en Vercel**
 
 *Como* desarrollador, *quiero* tener el proyecto desplegado públicamente
 desde el principio, *para* validar el pipeline de deploy antes de que haya
