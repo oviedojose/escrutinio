@@ -446,12 +446,19 @@ del flujo de Git de `plan-desarrollo.md`).
 
 - [ ] La URL de producción que asigna Vercel (`https://escrutinio.vercel.app`
       o similar) responde con la página por defecto de Next.js, sin errores.
-- [ ] Abrir un Pull Request de prueba (puede ser el mismo de HU-00.2 si
+- [x] Abrir un Pull Request de prueba (puede ser el mismo de HU-00.2 si
       todavía está abierto) y confirmar que Vercel comenta en el PR con una
       URL de "deploy preview" distinta de la de producción.
-- [ ] Agregar la URL de producción al `README.md` en una rama nueva
+- [x] Agregar la URL de producción al `README.md` en una rama nueva
       (`docs/00-readme-url`), con su propio commit/PR siguiendo el mismo
       flujo de Git.
+
+> Nota descubierta al ejecutar esto: las URLs de "deploy preview" quedan
+> protegidas por el login de Vercel por defecto (devuelven un 302 a
+> `vercel.com/sso-api` si no estás logueado) — es el comportamiento
+> esperado en el plan gratuito, no un error. Solo la URL de producción
+> (dominio `.vercel.app` sin sufijo de rama, o un dominio propio) es
+> pública sin login.
 
 ## 4. Cierre de la Fase 0
 
