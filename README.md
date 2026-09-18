@@ -16,6 +16,8 @@ reparto entre listas por método D'Hondt).
 En construcción. Ver el plan de desarrollo completo (historias de usuario,
 stack y decisiones de arquitectura) en [`docs/plan-desarrollo.md`](docs/plan-desarrollo.md).
 
+**Demo desplegada:** [escrutinio-alpha.vercel.app](https://escrutinio-alpha.vercel.app)
+
 ## Desarrollo local
 
 ```bash
