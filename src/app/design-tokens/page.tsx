@@ -32,9 +32,21 @@ const stateSwatches = [
 ] as const;
 
 const statusBadges = [
-  { bgCls: "bg-status-provisorio-subtle", textCls: "text-status-provisorio-text", label: "Provisorio" },
-  { bgCls: "bg-status-envivo-subtle", textCls: "text-status-envivo-text", label: "En vivo" },
-  { bgCls: "bg-status-electo-subtle", textCls: "text-status-electo-text", label: "Electo" },
+  {
+    bgCls: "bg-status-provisorio-subtle",
+    textCls: "text-status-provisorio-text",
+    label: "Provisorio",
+  },
+  {
+    bgCls: "bg-status-envivo-subtle",
+    textCls: "text-status-envivo-text",
+    label: "En vivo",
+  },
+  {
+    bgCls: "bg-status-electo-subtle",
+    textCls: "text-status-electo-text",
+    label: "Electo",
+  },
 ] as const;
 
 const fallbackSwatches = [
@@ -74,7 +86,9 @@ const spacingSamples = [
 function Swatch({ colorClass, label }: { colorClass: string; label: string }) {
   return (
     <div className="flex flex-col gap-2">
-      <div className={`h-16 w-full rounded-md border border-border ${colorClass}`} />
+      <div
+        className={`h-16 w-full rounded-md border border-border ${colorClass}`}
+      />
       <span className="font-mono text-xs text-ink-700">{label}</span>
     </div>
   );
@@ -88,7 +102,8 @@ export default function DesignTokensPage() {
           Tokens de diseño — Escrutinio
         </h1>
         <p className="text-ink-700">
-          Comparar esta página contra <code>docs/escrutinio-design-system.html</code>.
+          Comparar esta página contra{" "}
+          <code>docs/escrutinio-design-system.html</code>.
         </p>
       </header>
 
@@ -105,7 +120,10 @@ export default function DesignTokensPage() {
         <h2 className="text-xl font-semibold">Tinta de texto</h2>
         <div className="grid grid-cols-3 gap-4">
           {inkSamples.map((s) => (
-            <div key={s.label} className={`rounded-md bg-surface-100 p-4 ${s.cls}`}>
+            <div
+              key={s.label}
+              className={`rounded-md bg-surface-100 p-4 ${s.cls}`}
+            >
               {s.label}
             </div>
           ))}
@@ -122,7 +140,9 @@ export default function DesignTokensPage() {
       </section>
 
       <section className="flex flex-col gap-4">
-        <h2 className="text-xl font-semibold">StatusBadge (alias semánticos)</h2>
+        <h2 className="text-xl font-semibold">
+          StatusBadge (alias semánticos)
+        </h2>
         <div className="flex flex-wrap gap-3">
           {statusBadges.map((s) => (
             <span
@@ -136,7 +156,9 @@ export default function DesignTokensPage() {
       </section>
 
       <section className="flex flex-col gap-4">
-        <h2 className="text-xl font-semibold">Colores de reserva (sin colLista)</h2>
+        <h2 className="text-xl font-semibold">
+          Colores de reserva (sin colLista)
+        </h2>
         <div className="grid grid-cols-5 gap-4">
           {fallbackSwatches.map((s) => (
             <Swatch key={s.label} colorClass={s.cls} label={s.label} />
@@ -150,7 +172,9 @@ export default function DesignTokensPage() {
           Display — Newsreader
         </p>
         <p className="font-sans text-lg">Body/Sans — Public Sans</p>
-        <p className="font-mono text-sm">Data/Mono — IBM Plex Mono — 132.736 votos</p>
+        <p className="font-mono text-sm">
+          Data/Mono — IBM Plex Mono — 132.736 votos
+        </p>
       </section>
 
       <section className="flex flex-col gap-4">
@@ -182,12 +206,16 @@ export default function DesignTokensPage() {
       </section>
 
       <section className="flex flex-col gap-4 pb-16">
-        <h2 className="text-xl font-semibold">Espaciado (escala por defecto de Tailwind)</h2>
+        <h2 className="text-xl font-semibold">
+          Espaciado (escala por defecto de Tailwind)
+        </h2>
         <div className="flex flex-wrap items-end gap-2">
           {spacingSamples.map((s) => (
             <div key={s.label} className="flex flex-col items-center gap-1">
               <div className={`w-4 bg-accent-solid ${s.cls}`} />
-              <span className="font-mono text-[10px] text-ink-500">{s.label}</span>
+              <span className="font-mono text-[10px] text-ink-500">
+                {s.label}
+              </span>
             </div>
           ))}
         </div>

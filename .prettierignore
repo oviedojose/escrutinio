@@ -1,0 +1,11 @@
+package-lock.json
+
+# Raw source dumps (`var jsonX = {...}`), not valid JSON despite the extension.
+docs/*.json
+
+# Hand-authored/exported reference docs (design canvas, screen mockups), not app source.
+docs/*.html
+
+# Hand-formatted prose docs — Prettier's padded-column tables hurt diff readability
+# more than they help consistency here.
+**/*.md
