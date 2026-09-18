@@ -387,6 +387,15 @@ que renderice un bloque por cada color (con su nombre visible encima) y
 una muestra de cada espaciado/radio/sombra, usando las clases de Tailwind
 generadas en el paso 2.4.
 
+> Nota descubierta al ejecutar esto: Tailwind v4 genera las clases
+> escaneando el código fuente en busca de **strings literales completos**
+> — no ejecuta el JS. Una clase armada con un template literal dinámico
+> (por ejemplo `` `bg-${variable}` ``) nunca va a ser detectada ni
+> generada. Todas las clases de la página de verificación deben escribirse
+> como strings completos (por ejemplo, un array de objetos
+> `{ cls: "bg-surface-0", label: "surface-0" }` en vez de construir el
+> nombre de la clase en tiempo de ejecución).
+
 ### 2.7 Comparar contra el original
 
 Abrir en el navegador, lado a lado, `docs/escrutinio-design-system.html` y
