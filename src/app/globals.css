@@ -1,26 +1,170 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+ * Tokens copiados de docs/escrutinio-design-system.html.
+ * Los valores "crudos" (sin prefijo `--color-`/`--shadow-`) viven acá y
+ * cambian según [data-theme]; el bloque @theme más abajo los expone con los
+ * nombres que Tailwind v4 necesita para generar utilidades (bg-*, text-*,
+ * shadow-*, etc.).
+ */
+:root,
+[data-theme="light"] {
+  --surface-0: #f6f4ef;
+  --surface-100: #ffffff;
+  --surface-200: #f0eee8;
+  --surface-300: #e7e4dc;
+  --ink-900: #12161c;
+  --ink-700: #454e5c;
+  --ink-500: #5b6472;
+  --border: #dfe3e8;
+  --control-border: #7c8794;
+  --accent-solid: #0e7c86;
+  --accent-text: #0b5b61;
+  --accent-subtle: #e2f3f2;
+  --on-accent: #ffffff;
+  --positive-solid: #166a44;
+  --positive-text: #166a44;
+  --positive-subtle: #e3f5ec;
+  --on-positive: #ffffff;
+  --warning-solid: #8a5a10;
+  --warning-text: #8a5a10;
+  --warning-subtle: #faf0dc;
+  --on-warning: #ffffff;
+  --info-solid: #1c4d85;
+  --info-text: #1c4d85;
+  --info-subtle: #e7f0fb;
+  --on-info: #ffffff;
+  --neutral-blank: #b7bcc4;
+  --neutral-null: #8c93a0;
+  --fallback-a: #7c5cbf;
+  --fallback-b: #a33a6b;
+  --fallback-c: #8a6a1c;
+  --fallback-d: #4c5c72;
+  --fallback-e: #5c6b2e;
+
+  --shadow-sm-token: 0 1px 2px rgba(18, 22, 28, 0.06);
+  --shadow-md-token: 0 4px 12px rgba(18, 22, 28, 0.08);
+  --shadow-lg-token: 0 12px 32px rgba(18, 22, 28, 0.14);
 }
+
+[data-theme="dark"] {
+  --surface-0: #101317;
+  --surface-100: #191d24;
+  --surface-200: #20242c;
+  --surface-300: #272c35;
+  --ink-900: #eef1f5;
+  --ink-700: #b7c0cc;
+  --ink-500: #8b95a3;
+  --border: #2a2f38;
+  --control-border: #64707d;
+  --accent-solid: #5fd4de;
+  --accent-text: #7fe0e8;
+  --accent-subtle: #12333a;
+  --on-accent: #10141a;
+  --positive-solid: #4ade94;
+  --positive-text: #4ade94;
+  --positive-subtle: #113321;
+  --on-positive: #10141a;
+  --warning-solid: #f0b429;
+  --warning-text: #f0b429;
+  --warning-subtle: #3a2c0c;
+  --on-warning: #10141a;
+  --info-solid: #7db2ee;
+  --info-text: #7db2ee;
+  --info-subtle: #132a44;
+  --on-info: #10141a;
+  --neutral-blank: #4d525c;
+  --neutral-null: #363b44;
+  --fallback-a: #a996e0;
+  --fallback-b: #e08bb0;
+  --fallback-c: #d1ab4c;
+  --fallback-d: #9fb0c4;
+  --fallback-e: #a8bd6e;
+
+  --shadow-sm-token: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md-token: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg-token: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+/*
+ * Espaciado: docs/escrutinio-design-system.html define --space-1..--space-16
+ * como múltiplos exactos de 4px (4, 8, 12, 16, 20, 24, 32, 40, 48, 64), que
+ * es exactamente la escala por defecto de Tailwind v4 (--spacing: 0.25rem
+ * como unidad base). No hace falta redefinir nada: p-4, gap-6, m-8, etc. ya
+ * coinciden con los tokens del design system.
+ */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-surface-0: var(--surface-0);
+  --color-surface-100: var(--surface-100);
+  --color-surface-200: var(--surface-200);
+  --color-surface-300: var(--surface-300);
+  --color-ink-900: var(--ink-900);
+  --color-ink-700: var(--ink-700);
+  --color-ink-500: var(--ink-500);
+  --color-border: var(--border);
+  --color-control-border: var(--control-border);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-accent-solid: var(--accent-solid);
+  --color-accent-text: var(--accent-text);
+  --color-accent-subtle: var(--accent-subtle);
+  --color-on-accent: var(--on-accent);
+
+  --color-positive-solid: var(--positive-solid);
+  --color-positive-text: var(--positive-text);
+  --color-positive-subtle: var(--positive-subtle);
+  --color-on-positive: var(--on-positive);
+
+  --color-warning-solid: var(--warning-solid);
+  --color-warning-text: var(--warning-text);
+  --color-warning-subtle: var(--warning-subtle);
+  --color-on-warning: var(--on-warning);
+
+  --color-info-solid: var(--info-solid);
+  --color-info-text: var(--info-text);
+  --color-info-subtle: var(--info-subtle);
+  --color-on-info: var(--on-info);
+
+  --color-neutral-blank: var(--neutral-blank);
+  --color-neutral-null: var(--neutral-null);
+  --color-fallback-a: var(--fallback-a);
+  --color-fallback-b: var(--fallback-b);
+  --color-fallback-c: var(--fallback-c);
+  --color-fallback-d: var(--fallback-d);
+  --color-fallback-e: var(--fallback-e);
+
+  /* Alias semánticos del sistema electoral (StatusBadge) */
+  --color-status-provisorio-solid: var(--warning-solid);
+  --color-status-provisorio-subtle: var(--warning-subtle);
+  --color-status-provisorio-text: var(--warning-text);
+  --color-status-provisorio-on: var(--on-warning);
+
+  --color-status-envivo-solid: var(--accent-solid);
+  --color-status-envivo-subtle: var(--accent-subtle);
+  --color-status-envivo-text: var(--accent-text);
+  --color-status-envivo-on: var(--on-accent);
+
+  --color-status-electo-solid: var(--positive-solid);
+  --color-status-electo-subtle: var(--positive-subtle);
+  --color-status-electo-text: var(--positive-text);
+  --color-status-electo-on: var(--on-positive);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 999px;
+
+  --shadow-sm: var(--shadow-sm-token);
+  --shadow-md: var(--shadow-md-token);
+  --shadow-lg: var(--shadow-lg-token);
+
+  --font-display: var(--font-newsreader);
+  --font-sans: var(--font-public-sans);
+  --font-mono: var(--font-ibm-plex-mono);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--surface-0);
+  color: var(--ink-900);
+  font-family: var(--font-sans);
 }
