@@ -255,7 +255,7 @@ Conceptos/librerías: `create-next-app`, estructura de App Router (carpeta
 
 ---
 
-**☐ HU-00.2 — Configurar Tailwind con los tokens del design system**
+**☑ HU-00.2 — Configurar Tailwind con los tokens del design system**
 
 *Como* desarrollador, *quiero* que las utilidades de Tailwind usen los mismos
 valores que `docs/escrutinio-design-system.html`, *para* no duplicar ni
