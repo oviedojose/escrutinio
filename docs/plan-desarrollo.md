@@ -210,7 +210,7 @@ Todas siguen el flujo de Git de la sección 4.
 
 ### Fase 0 — Setup del proyecto
 
-**☐ HU-00.1 — Inicializar repositorio y proyecto base**
+**☑ HU-00.1 — Inicializar repositorio y proyecto base**
 
 *Como* desarrollador, *quiero* tener el repositorio y el proyecto Next.js
 listos, *para* empezar a construir sobre una base versionada desde el día 1.

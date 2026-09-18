@@ -34,6 +34,18 @@ Requiere que `gh` (GitHub CLI) esté instalado y autenticado
 un agente sin intervención tuya, porque abre un flujo de login en el
 navegador).
 
+Después de loguearse, correr también `gh auth setup-git` — sin esto, `git
+push` puede fallar con `could not read Username for 'https://github.com'`
+porque git no queda enterado de que debe usar las credenciales de `gh`.
+
+Si no tenés configurado un nombre/email de git globalmente (`git config
+--global user.name` / `user.email` no devuelven nada), configurarlos antes
+del primer commit. Si tu perfil de GitHub no tiene un email público, usar
+el email privado que GitHub genera automáticamente
+(`<tu-id-numerico>+<usuario>@users.noreply.github.com`, con el ID que
+devuelve `gh api user --jq '.id'`) para que los commits se asocien a tu
+perfil sin exponer tu email real en un repo público.
+
 Con `gh` ya autenticado, desde la carpeta actual del proyecto
 (`/Users/joseoviedo/Documents/Personal/fs-practica/proyectos/escrutinio`,
 que ya contiene la carpeta `docs/`), primero inicializar git localmente
@@ -172,11 +184,11 @@ git push -u origin main
 
 ### 1.11 Verificación final de HU-00.1
 
-- [ ] El repo `escrutinio` existe en GitHub y es público.
-- [ ] `main` en GitHub tiene: el proyecto Next.js completo, `docs/` con los
+- [x] El repo `escrutinio` existe en GitHub y es público.
+- [x] `main` en GitHub tiene: el proyecto Next.js completo, `docs/` con los
       archivos de referencia y mockups, `README.md`, `LICENSE`,
       `.env.example`, y un `.gitignore` que cubre archivos de entorno.
-- [ ] `npm run dev` funciona en local sin errores.
+- [x] `npm run dev` funciona en local sin errores.
 
 ## 2. HU-00.2 — Configurar Tailwind con los tokens del design system
 
